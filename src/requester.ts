@@ -3,23 +3,23 @@ import axios from "axios";
 
 export const axiosInstance = axios.create({
     baseURL: "https://dummyjson.com",
-    timeout: 60
+    timeout: 1000
 });
 
 
 export async function sampleGet() {
     try {
         const response = await axiosInstance.get(
-            '/RESOURCE/',
+            '/recipes',
             {
                 params: {
                     limit: 10,
                     skip: 5, 
-                    select: 'key1,key2,key3'  
+                    select: 'name'  
                 }
             }   
         );
-        console.log(response);
+        console.log(response.data);
     } catch (error) {
         console.error(error);
     }
