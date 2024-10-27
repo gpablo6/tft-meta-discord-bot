@@ -24,4 +24,5 @@ export async function sampleGet() {
     } catch (error) {
         console.error(error);
     }
+    
 }
